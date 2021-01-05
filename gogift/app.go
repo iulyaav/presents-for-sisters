@@ -8,7 +8,6 @@ import (
 	"os"
 )
 
-
 func getAllPersons(w http.ResponseWriter, req *http.Request) {
 	jsonFile, err := os.Open("data.json")
 	if err != nil {
@@ -21,18 +20,27 @@ func getAllPersons(w http.ResponseWriter, req *http.Request) {
 	var persons Persons
 	json.Unmarshal(byteValue, &persons)
 
-
-	// var persons = Persons{newPerson("Mery"), newPerson("Daia"), newPerson("Iulia")}
-	personsJson, err := json.Marshal(persons)
+	personsJSON, err := json.Marshal(persons)
 	if err != nil {
-        fmt.Fprintf(w, "Cannot encode to JSON ")
-    } else {
-		fmt.Fprintf(w, "%s", personsJson)
+		fmt.Fprintf(w, "Cannot encode to JSON ")
+	} else {
+		fmt.Fprintf(w, "%s", personsJSON)
 	}
+}
+
+func addGift(w http.ResponseWriter, req *http.Request) {
+
+	if req.Method == "POST" {
+		w.Write([]byte("<h1>Welcome to my web server!</h1>"))
+	} else {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+	}
+
 }
 
 func main() {
 	http.HandleFunc("/", getAllPersons)
+	http.HandleFunc("/add-gift", addGift)
 	fmt.Println("Starting server on port 8000....")
 	http.ListenAndServe(":8000", nil)
 }
