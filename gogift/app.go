@@ -39,8 +39,12 @@ func addGift(w http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
+	// Serve static files from the frontend/dist directory.
+	// fs := http.FileServer(http.Dir("./frontend/dist"))
 	http.HandleFunc("/", getAllPersons)
 	http.HandleFunc("/add-gift", addGift)
-	fmt.Println("Starting server on port 8000....")
-	http.ListenAndServe(":8000", nil)
+
+	// Start the server.
+	fmt.Println("Starting server on port 3000....")
+	http.ListenAndServe(":3000", nil)
 }
