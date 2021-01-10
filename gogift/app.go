@@ -9,6 +9,7 @@ import (
 )
 
 func getAllPersons(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	jsonFile, err := os.Open("data.json")
 	if err != nil {
 		fmt.Println(err)
