@@ -6,7 +6,7 @@
     "node": "15.0.1"
   },
   "scripts": {
-    "heroku-prebuild": "cd frontend && npm install && npm run build",
+    "heroku-prebuild": "cd frontend && npm install",
     "build": "vue-cli-service build",
     "serve": "vue-cli-service serve",
     "start": "npm run serve"
