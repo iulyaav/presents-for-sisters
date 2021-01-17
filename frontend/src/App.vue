@@ -2,7 +2,7 @@
     <div>
         <ul id="example-1">
             <li v-for="item in this.people" :key="item.name">
-                {{ item.name }}
+                <person v-bind:person="item" />
             </li>
         </ul>
     </div>
@@ -11,8 +11,10 @@
 
 <script>
 import axios from 'axios';
+import Person from './Person.vue';
 
 export default {
+  components: { Person },
   name: 'App',
 
   data() { return {

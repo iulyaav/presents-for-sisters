@@ -1,15 +1,38 @@
 {
+    "groups": [
+        {
+            "id": "1",
+            "name": "sisters"
+        },
+        {
+            "id": "2",
+            "name": "test"
+        }
+    ],
     "persons": [
         {
+            "name": "Jane",
+            "group": "2",
+            "presents": []
+        },
+        {
+            "name": "Joe",
+            "group": "2",
+            "presents": []
+        },
+        {
             "name": "Daiana",
+            "group": "1",
             "presents": []
         },
         {
             "name": "Maria",
+            "group": "1",
             "presents": []
         },
         {
             "name": "Iulia",
+            "group": "1",
             "presents": []
         }
     ]
