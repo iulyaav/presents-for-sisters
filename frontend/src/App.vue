@@ -1,6 +1,7 @@
 <template>
     <div>
         <ul id="example-1">
+          Hello, Heroku
             <li v-for="item in this.people" :key="item.name">
                 <person v-bind:person="item" />
             </li>
@@ -10,7 +11,7 @@
 
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 import Person from './Person.vue';
 
 export default {
@@ -18,13 +19,13 @@ export default {
   name: 'App',
 
   data() { return {
-    people: '',
+    people: [],
   } },
-  created() {
-    axios.get('http://localhost:3000/').then(people => {
-      this.people = people.data.persons;
-    });
-  },
+  // created() {
+  //   axios.get('http://localhost:3000/').then(people => {
+  //     this.people = people.data.persons;
+  //   });
+  // },
 
   methods: {
     getData() {
