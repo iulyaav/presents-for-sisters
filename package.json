@@ -9,7 +9,7 @@
     "heroku-prebuild": "cd frontend && npm install",
     "build": "cd frontend && vue-cli-service build",
     "serve": "cd frontend && vue-cli-service serve",
-    "start": "npm run serve"
+    "start": "npm run build"
   },
   "dependencies": {
     "axios": "^0.21.1",
