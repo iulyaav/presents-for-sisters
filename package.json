@@ -7,8 +7,9 @@
   },
   "scripts": {
     "heroku-prebuild": "cd frontend && npm install",
-    "build": "cd frontend && vue-cli-service build",
-    "serve": "cd frontend && vue-cli-service serve",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
     "start": "npm run build"
   },
   "dependencies": {
