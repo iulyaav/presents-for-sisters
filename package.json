@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "heroku-prebuild": "cd frontend && npm install && npm run build",
-    "serve": "npm run serve"
+    "serve": "cd frontenf && npm run serve"
   },
   "dependencies": {
     "axios": "^0.21.1",
